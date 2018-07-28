@@ -18,6 +18,15 @@ class CardsViewController: UIViewController {
         return cv
     }()
     
+    fileprivate let presentableViewControllers: [CardDetailsViewController] = {
+        var viewControllers: [CardDetailsViewController] = []
+        for i in 0..<20 {
+            let vc = CardDetailsViewController()
+            viewControllers.append(vc)
+        }
+        return viewControllers
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -39,7 +48,7 @@ class CardsViewController: UIViewController {
 extension CardsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return presentableViewControllers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,11 +64,11 @@ extension CardsViewController: UICollectionViewDelegate {
         guard let cell = cell as? CardCollectionViewCell else {
             fatalError()
         }
-        cell.configure(withViewController: CardDetailsViewController())
+        cell.configure(withViewController: presentableViewControllers[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        present(CardDetailsViewController(), animated: true, completion: nil)
+        present(presentableViewControllers[indexPath.row], animated: true, completion: nil)
     }
 }
 
