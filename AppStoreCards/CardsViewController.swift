@@ -51,6 +51,13 @@ extension CardsViewController: UICollectionViewDataSource {
 
 extension CardsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? CardCollectionViewCell else {
+            fatalError()
+        }
+        cell.configure(withViewController: CardDetailsViewController())
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         present(CardDetailsViewController(), animated: true, completion: nil)
     }

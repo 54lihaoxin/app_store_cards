@@ -10,6 +10,8 @@ import UIKit
 
 class CardDetailsViewController: UIViewController {
     
+    @IBOutlet private weak var dismissButton: UIButton!
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
@@ -20,5 +22,12 @@ class CardDetailsViewController: UIViewController {
     
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CardDetailsViewController {
+    
+    func configure(forCardCell: Bool) {
+        dismissButton.alpha = forCardCell ? 0 : 1
     }
 }

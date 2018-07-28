@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDetailsViewController" customModule="AppStoreCards" customModuleProvider="target">
             <connections>
+                <outlet property="dismissButton" destination="AlS-Y7-s1L" id="ClD-mA-NzK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

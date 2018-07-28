@@ -18,24 +18,10 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="some_photo" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-tG-eUv">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                    </imageView>
-                </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="I8f-tG-eUv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6O8-nI-EOv"/>
-                <constraint firstAttribute="trailing" secondItem="I8f-tG-eUv" secondAttribute="trailing" id="SZ7-Gf-zj3"/>
-                <constraint firstItem="I8f-tG-eUv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XvO-PS-Qf6"/>
-                <constraint firstAttribute="bottom" secondItem="I8f-tG-eUv" secondAttribute="bottom" id="jLr-Js-O6T"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="200"/>
             <point key="canvasLocation" x="-7" y="129"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="some_photo" width="496" height="421"/>
-    </resources>
 </document>
