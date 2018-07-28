@@ -18,6 +18,10 @@ class CardsViewController: UIViewController {
         return cv
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func loadView() {
         super.loadView()
         view.addSubview(collectionView)

@@ -11,4 +11,10 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "CardCollectionViewCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 12
+        layer.masksToBounds = true
+    }
 }
