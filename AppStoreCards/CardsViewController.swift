@@ -51,6 +51,9 @@ extension CardsViewController: UICollectionViewDataSource {
 
 extension CardsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        present(CardDetailsViewController(), animated: true, completion: nil)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

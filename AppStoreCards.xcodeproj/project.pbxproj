@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464F010D210D1B8D0055DD4A /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F010B210D1B8D0055DD4A /* CardDetailsViewController.swift */; };
+		464F010E210D1B8D0055DD4A /* CardDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464F010C210D1B8D0055DD4A /* CardDetailsViewController.xib */; };
 		AC27162020EF0BF5001E4F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27161F20EF0BF5001E4F33 /* AppDelegate.swift */; };
 		AC27162720EF0BF9001E4F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC27162620EF0BF9001E4F33 /* Assets.xcassets */; };
 		AC27162A20EF0BF9001E4F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC27162820EF0BF9001E4F33 /* LaunchScreen.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		464F010B210D1B8D0055DD4A /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		464F010C210D1B8D0055DD4A /* CardDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailsViewController.xib; sourceTree = "<group>"; };
 		AC27161C20EF0BF5001E4F33 /* AppStoreCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC27161F20EF0BF5001E4F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC27162620EF0BF9001E4F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				AC27161F20EF0BF5001E4F33 /* AppDelegate.swift */,
 				AC27163720EF1008001E4F33 /* UIView+AppExtensions.swift */,
 				AC27163920EF1092001E4F33 /* NSObject+AppExtensions.swift */,
+				464F010B210D1B8D0055DD4A /* CardDetailsViewController.swift */,
+				464F010C210D1B8D0055DD4A /* CardDetailsViewController.xib */,
 				AC27163120EF0D34001E4F33 /* CardsViewController.swift */,
 				AC27163320EF0F42001E4F33 /* CardCollectionViewCell.swift */,
 				AC27163420EF0F42001E4F33 /* CardCollectionViewCell.xib */,
@@ -132,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC27162A20EF0BF9001E4F33 /* LaunchScreen.storyboard in Resources */,
+				464F010E210D1B8D0055DD4A /* CardDetailsViewController.xib in Resources */,
 				AC27163620EF0F42001E4F33 /* CardCollectionViewCell.xib in Resources */,
 				AC27162720EF0BF9001E4F33 /* Assets.xcassets in Resources */,
 			);
@@ -145,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC27163A20EF1092001E4F33 /* NSObject+AppExtensions.swift in Sources */,
+				464F010D210D1B8D0055DD4A /* CardDetailsViewController.swift in Sources */,
 				AC27163220EF0D34001E4F33 /* CardsViewController.swift in Sources */,
 				AC27163520EF0F42001E4F33 /* CardCollectionViewCell.swift in Sources */,
 				AC27163820EF1008001E4F33 /* UIView+AppExtensions.swift in Sources */,
