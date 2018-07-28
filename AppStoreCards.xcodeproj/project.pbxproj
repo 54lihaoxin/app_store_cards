@@ -45,6 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464F010F210D30900055DD4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC27163320EF0F42001E4F33 /* CardCollectionViewCell.swift */,
+				AC27163420EF0F42001E4F33 /* CardCollectionViewCell.xib */,
+				464F010B210D1B8D0055DD4A /* CardDetailsViewController.swift */,
+				464F010C210D1B8D0055DD4A /* CardDetailsViewController.xib */,
+				AC27163120EF0D34001E4F33 /* CardsViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AC27161320EF0BF5001E4F33 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +76,10 @@
 		AC27161E20EF0BF5001E4F33 /* AppStoreCards */ = {
 			isa = PBXGroup;
 			children = (
+				464F010F210D30900055DD4A /* Views */,
 				AC27161F20EF0BF5001E4F33 /* AppDelegate.swift */,
 				AC27163720EF1008001E4F33 /* UIView+AppExtensions.swift */,
 				AC27163920EF1092001E4F33 /* NSObject+AppExtensions.swift */,
-				464F010B210D1B8D0055DD4A /* CardDetailsViewController.swift */,
-				464F010C210D1B8D0055DD4A /* CardDetailsViewController.xib */,
-				AC27163120EF0D34001E4F33 /* CardsViewController.swift */,
-				AC27163320EF0F42001E4F33 /* CardCollectionViewCell.swift */,
-				AC27163420EF0F42001E4F33 /* CardCollectionViewCell.xib */,
 				AC27162620EF0BF9001E4F33 /* Assets.xcassets */,
 				AC27162820EF0BF9001E4F33 /* LaunchScreen.storyboard */,
 				AC27162B20EF0BF9001E4F33 /* Info.plist */,
