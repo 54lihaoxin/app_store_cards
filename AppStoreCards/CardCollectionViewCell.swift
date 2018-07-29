@@ -11,12 +11,13 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "CardCollectionViewCell"
+    static let cornerRadius: CGFloat = 12
     
     private var presentableViewController: CardDetailsViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 12
+        layer.cornerRadius = CardCollectionViewCell.cornerRadius
         layer.masksToBounds = true
     }
     

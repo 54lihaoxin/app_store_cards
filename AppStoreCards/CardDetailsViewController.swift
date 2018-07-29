@@ -10,6 +10,8 @@ import UIKit
 
 class CardDetailsViewController: UIViewController {
     
+    static let heightAsCard: CGFloat = 400
+    
     @IBOutlet private weak var dismissButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,6 +20,11 @@ class CardDetailsViewController: UIViewController {
     
     init() {
         super.init(nibName: CardDetailsViewController.className, bundle: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.clipsToBounds = true
     }
     
     @IBAction func dismiss(_ sender: Any) {
@@ -29,5 +36,6 @@ extension CardDetailsViewController {
     
     func configure(forCardCell: Bool) {
         dismissButton.alpha = forCardCell ? 0 : 1
+        view.layer.cornerRadius = forCardCell ? CardCollectionViewCell.cornerRadius : 0
     }
 }
