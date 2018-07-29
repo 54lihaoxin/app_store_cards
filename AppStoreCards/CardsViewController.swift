@@ -15,6 +15,7 @@ class CardsViewController: UIViewController {
         cv.dataSource = self
         cv.delegate = self
         cv.register(UINib(nibName: CardCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
+        cv.backgroundColor = .orange
         return cv
     }()
     
@@ -35,11 +36,6 @@ class CardsViewController: UIViewController {
         super.loadView()
         view.addSubview(collectionView)
         collectionView.activateLayoutAnchorsWithSuperView()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .orange
     }
 }
 
