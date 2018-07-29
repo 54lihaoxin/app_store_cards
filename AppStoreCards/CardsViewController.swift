@@ -28,6 +28,8 @@ class CardsViewController: UIViewController {
         return viewControllers
     }()
     
+    fileprivate weak var selectedCard: CardCollectionViewCell?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -64,6 +66,11 @@ extension CardsViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell else {
+            assertionFailure()
+            return
+        }
+        selectedCard = cell
         present(presentableViewControllers[indexPath.row], animated: true, completion: nil)
     }
 }
