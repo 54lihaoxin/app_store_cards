@@ -10,15 +10,17 @@ import UIKit
 
 extension UIView {
     
-    func activateLayoutAnchorsWithSuperView(insets: UIEdgeInsets = .zero) {
+    @discardableResult func activateLayoutAnchorsWithSuperView(insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         guard let superview = superview else {
             assertionFailure("\(#function) super view not found")
-            return
+            return []
         }
         translatesAutoresizingMaskIntoConstraints = false // Note: layout goes wrong if this is not set to false
-        NSLayoutConstraint.activate([topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top),
-                                     leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insets.left),
-                                     bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: insets.bottom),
-                                     trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: insets.right)])
+        let constraints = [topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top),
+                           leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insets.left),
+                           bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: insets.bottom),
+                           trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: insets.right)]
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
 }
