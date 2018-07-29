@@ -21,12 +21,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(withViewController viewController: CardDetailsViewController) {
-        guard presentableViewController != viewController else {
-            return
-        }
-        if let presentedViewController = presentableViewController {
-            presentedViewController.view.removeFromSuperview()
-        }
         presentableViewController = viewController
         viewController.loadViewIfNeeded()
         addSubview(viewController.view)
