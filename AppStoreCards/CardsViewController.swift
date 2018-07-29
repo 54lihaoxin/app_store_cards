@@ -19,10 +19,11 @@ class CardsViewController: UIViewController {
         return cv
     }()
     
-    fileprivate let presentableViewControllers: [CardDetailsViewController] = {
+    fileprivate lazy var presentableViewControllers: [CardDetailsViewController] = {
         var viewControllers: [CardDetailsViewController] = []
         for i in 0..<20 {
             let vc = CardDetailsViewController()
+            vc.transitioningDelegate = self
             viewControllers.append(vc)
         }
         return viewControllers
@@ -93,5 +94,26 @@ extension CardsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return padding
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+
+extension CardsViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedCard = selectedCard else {
+            assertionFailure()
+            return nil
+        }
+        return CardAnimationController(mode: .present, card: selectedCard, originalFrame: view.convert(selectedCard.frame, from: collectionView))
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedCard = selectedCard else {
+            assertionFailure()
+            return nil
+        }
+        return CardAnimationController(mode: .dismiss, card: selectedCard, originalFrame: view.convert(selectedCard.frame, from: collectionView))
     }
 }
