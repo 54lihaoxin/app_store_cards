@@ -18,8 +18,8 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false // Note: layout goes wrong if this is not set to false
         let constraints = [topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top),
                            leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insets.left),
-                           bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: insets.bottom),
-                           trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: insets.right)]
+                           superview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom),
+                           superview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right)]
         NSLayoutConstraint.activate(constraints)
         return constraints
     }
