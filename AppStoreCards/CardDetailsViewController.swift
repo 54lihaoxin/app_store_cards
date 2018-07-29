@@ -10,8 +10,20 @@ import UIKit
 
 class CardDetailsViewController: UIViewController {
     
-    static let heightAsCard: CGFloat = 400
+    static let heightAsCard: CGFloat = 350
+    static let fullScreenPreviewContainerHeight = heightAsCard + 50
     
+    @IBOutlet weak var cardPreviewContainer: UIView!
+    @IBOutlet weak var cardPreviewContainerHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            cardPreviewContainerHeightConstraint.constant = CardDetailsViewController.heightAsCard
+        }
+    }
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            imageViewHeightConstraint.constant = CardDetailsViewController.fullScreenPreviewContainerHeight
+        }
+    }
     @IBOutlet private weak var dismissButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,7 +47,14 @@ class CardDetailsViewController: UIViewController {
 extension CardDetailsViewController {
     
     func configure(forCardCell: Bool) {
-        dismissButton.alpha = forCardCell ? 0 : 1
-        view.layer.cornerRadius = forCardCell ? CardCollectionViewCell.cornerRadius : 0
+        if forCardCell {
+            dismissButton.alpha = 0
+            view.layer.cornerRadius = CardCollectionViewCell.cornerRadius
+            cardPreviewContainerHeightConstraint.constant = CardDetailsViewController.heightAsCard
+        } else {
+            dismissButton.alpha = 1
+            view.layer.cornerRadius = 0
+            cardPreviewContainerHeightConstraint.constant = CardDetailsViewController.fullScreenPreviewContainerHeight
+        }
     }
 }
