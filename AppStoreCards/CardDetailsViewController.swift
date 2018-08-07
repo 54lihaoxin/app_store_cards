@@ -15,6 +15,11 @@ class CardDetailsViewController: UIViewController {
     
     private static let placeHolderContentHeight: CGFloat = 400 // TODO: use `NSString.boundingRect(...)` to compute the height later
     
+    @IBOutlet weak var closeButton: UIButton! {
+        didSet {
+            closeButton.layer.cornerRadius = 8
+        }
+    }
     @IBOutlet private weak var cardPreviewContainer: UIView!
     @IBOutlet private weak var cardPreviewContainerTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var cardPreviewContainerHeightConstraint: NSLayoutConstraint! {
@@ -102,7 +107,14 @@ extension CardDetailsViewController {
 extension CardDetailsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        cardPreviewContainerTopConstraint.constant = scrollView.contentOffset.y
+        if scrollView.contentOffset.y < 0 {
+            closeButton.alpha = 1
+        } else if scrollView.contentOffset.y <= 100 {
+            closeButton.alpha = (100 - scrollView.contentOffset.y) / 100
+        } else {
+            closeButton.alpha = 0
+        }
+        cardPreviewContainerTopConstraint.constant = max(0, scrollView.contentOffset.y) // do not allow scroll up beyond status bar
         cardPreviewContainer.updateConstraintsIfNeeded()
     }
 }

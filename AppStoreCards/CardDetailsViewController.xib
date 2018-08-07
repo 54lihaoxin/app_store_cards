@@ -15,6 +15,7 @@
                 <outlet property="cardPreviewContainer" destination="uxS-hx-0MD" id="7xj-HW-Gv6"/>
                 <outlet property="cardPreviewContainerHeightConstraint" destination="5jI-ec-EnW" id="Ogz-j6-qtw"/>
                 <outlet property="cardPreviewContainerTopConstraint" destination="TSt-QU-lTU" id="cnw-nl-yxf"/>
+                <outlet property="closeButton" destination="AlS-Y7-s1L" id="ccW-ye-SJP"/>
                 <outlet property="contentScrollView" destination="dPd-MO-h0E" id="5Nq-lw-MsA"/>
                 <outlet property="dismissButton" destination="AlS-Y7-s1L" id="ClD-mA-NzK"/>
                 <outlet property="imageViewHeightConstraint" destination="0Rj-uP-mGm" id="fN5-Vg-4PQ"/>
@@ -59,20 +60,6 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlS-Y7-s1L">
-                            <rect key="frame" x="287" y="50" width="66" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="0eD-iL-wrw"/>
-                                <constraint firstAttribute="width" constant="66" id="YPc-YX-Iuo"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                            <state key="normal" title="Close">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="Uou-NM-ySt"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -83,13 +70,26 @@
                         <constraint firstItem="xUZ-4e-ifZ" firstAttribute="leading" secondItem="uxS-hx-0MD" secondAttribute="leading" constant="22" id="BEE-hv-66B"/>
                         <constraint firstItem="19n-ko-ajK" firstAttribute="top" secondItem="uxS-hx-0MD" secondAttribute="top" constant="50" id="DSj-go-GXJ"/>
                         <constraint firstAttribute="bottom" secondItem="xUZ-4e-ifZ" secondAttribute="bottom" constant="22" id="DwW-sa-bYW"/>
-                        <constraint firstItem="AlS-Y7-s1L" firstAttribute="top" secondItem="uxS-hx-0MD" secondAttribute="top" constant="50" id="IhH-Kr-Rw4"/>
                         <constraint firstItem="iT2-dF-M93" firstAttribute="centerY" secondItem="uxS-hx-0MD" secondAttribute="centerY" id="iQV-oQ-dOy"/>
                         <constraint firstItem="QhB-r3-ltk" firstAttribute="top" secondItem="19n-ko-ajK" secondAttribute="bottom" constant="22" id="okQ-3e-Qcc"/>
-                        <constraint firstAttribute="trailing" secondItem="AlS-Y7-s1L" secondAttribute="trailing" constant="22" id="yfS-vb-drf"/>
                         <constraint firstItem="QhB-r3-ltk" firstAttribute="leading" secondItem="uxS-hx-0MD" secondAttribute="leading" constant="22" id="zsu-01-YKK"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlS-Y7-s1L">
+                    <rect key="frame" x="287" y="52" width="66" height="32"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.74751177226027399" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0eD-iL-wrw"/>
+                        <constraint firstAttribute="width" constant="66" id="YPc-YX-Iuo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <state key="normal" title="Close">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="Uou-NM-ySt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -99,7 +99,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uxS-hx-0MD" secondAttribute="trailing" id="INI-rj-osX"/>
                 <constraint firstItem="dPd-MO-h0E" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="KI1-9M-6X8"/>
                 <constraint firstAttribute="top" secondItem="uxS-hx-0MD" secondAttribute="top" id="TSt-QU-lTU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AlS-Y7-s1L" secondAttribute="trailing" constant="22" id="mXf-vV-xvM"/>
                 <constraint firstItem="dPd-MO-h0E" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sid-Tc-XjV"/>
+                <constraint firstItem="AlS-Y7-s1L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="wpT-Oq-rbf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
