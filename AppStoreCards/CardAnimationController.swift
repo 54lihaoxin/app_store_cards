@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CardAnimationControllerDelegate: class {
+    func presentAnimationEnded(_ transitionCompleted: Bool)
+    func dismissAnimationEnded(_ transitionCompleted: Bool)
+}
+
 class CardAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     enum Mode {
@@ -22,11 +27,13 @@ class CardAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     fileprivate let mode: Mode
     fileprivate let card: CardCollectionViewCell
     fileprivate let originalFrame: CGRect // TODO: This will be need to be obtained from delegate to handle view resizing and rotation.
+    private unowned let delegate: CardAnimationControllerDelegate
     
-    init(mode: Mode, card: CardCollectionViewCell, originalFrame: CGRect) {
+    init(mode: Mode, card: CardCollectionViewCell, originalFrame: CGRect, longLifeDelegate: CardAnimationControllerDelegate) {
         self.mode = mode
         self.card = card
         self.originalFrame = originalFrame
+        delegate = longLifeDelegate
     }
     
     // This is used for percent driven interactive transitions, as well as for
@@ -55,9 +62,14 @@ class CardAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
 //    }
     
     // This is a convenience and if implemented will be invoked by the system when the transition context's completeTransition: method is invoked.
-//    func animationEnded(_ transitionCompleted: Bool) {
-//        print("\(#function) transitionCompleted: \(transitionCompleted)")
-//    }
+    func animationEnded(_ transitionCompleted: Bool) {
+        switch mode {
+        case .present:
+            delegate.presentAnimationEnded(transitionCompleted)
+        case .dismiss:
+            delegate.dismissAnimationEnded(transitionCompleted)
+        }
+    }
 }
 
 private extension CardAnimationController {

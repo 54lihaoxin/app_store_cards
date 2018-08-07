@@ -106,7 +106,10 @@ extension CardsViewController: UIViewControllerTransitioningDelegate {
             assertionFailure()
             return nil
         }
-        return CardAnimationController(mode: .present, card: selectedCard, originalFrame: view.convert(selectedCard.frame, from: collectionView))
+        return CardAnimationController(mode: .present,
+                                       card: selectedCard,
+                                       originalFrame: view.convert(selectedCard.frame, from: collectionView),
+                                       longLifeDelegate: self)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -114,6 +117,22 @@ extension CardsViewController: UIViewControllerTransitioningDelegate {
             assertionFailure()
             return nil
         }
-        return CardAnimationController(mode: .dismiss, card: selectedCard, originalFrame: view.convert(selectedCard.frame, from: collectionView))
+        return CardAnimationController(mode: .dismiss,
+                                       card: selectedCard,
+                                       originalFrame: view.convert(selectedCard.frame, from: collectionView),
+                                       longLifeDelegate: self)
+    }
+}
+
+// MARK: - CardAnimationControllerDelegate
+
+extension CardsViewController: CardAnimationControllerDelegate {
+    
+    func presentAnimationEnded(_ transitionCompleted: Bool) {
+        print("\(#function) transitionCompleted:", transitionCompleted)
+    }
+    
+    func dismissAnimationEnded(_ transitionCompleted: Bool) {
+        print("\(#function) transitionCompleted:", transitionCompleted)
     }
 }
