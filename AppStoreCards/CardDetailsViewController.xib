@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="cardPreviewContainer" destination="uxS-hx-0MD" id="7xj-HW-Gv6"/>
                 <outlet property="cardPreviewContainerHeightConstraint" destination="5jI-ec-EnW" id="Ogz-j6-qtw"/>
+                <outlet property="cardPreviewContainerTopConstraint" destination="TSt-QU-lTU" id="cnw-nl-yxf"/>
+                <outlet property="contentScrollView" destination="dPd-MO-h0E" id="5Nq-lw-MsA"/>
                 <outlet property="dismissButton" destination="AlS-Y7-s1L" id="ClD-mA-NzK"/>
                 <outlet property="imageViewHeightConstraint" destination="0Rj-uP-mGm" id="fN5-Vg-4PQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,6 +26,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-MO-h0E">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5Bt-M9-crs"/>
+                    </connections>
+                </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxS-hx-0MD">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                     <subviews>
@@ -86,8 +94,12 @@
             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="uxS-hx-0MD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="59J-Ag-b5r"/>
+                <constraint firstItem="dPd-MO-h0E" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="9zy-Uj-VGq"/>
+                <constraint firstItem="dPd-MO-h0E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BEp-DA-Y7l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uxS-hx-0MD" secondAttribute="trailing" id="INI-rj-osX"/>
+                <constraint firstItem="dPd-MO-h0E" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="KI1-9M-6X8"/>
                 <constraint firstAttribute="top" secondItem="uxS-hx-0MD" secondAttribute="top" id="TSt-QU-lTU"/>
+                <constraint firstItem="dPd-MO-h0E" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sid-Tc-XjV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
