@@ -89,7 +89,7 @@ private extension CardAnimationController {
             cardDetailsViewController.view.activateLayoutAnchorsWithSuperView() // Set up constraints only after setting up the final frame correctly.
             cardDetailsViewController.view.layoutIfNeeded() // Only call `layoutIfNeeded` for the final step.
         }) { (finished) -> Void in
-            transitionContext.completeTransition(finished) // Do not forget this.
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled) // Do not forget this.
         }
     }
     
@@ -123,7 +123,7 @@ private extension CardAnimationController {
         }) { (finished) -> Void in
             // Add `cardDetailsViewController` back to the card cell. Do not call `transitionContext.completeTransition`
             // after `card.configure`, otherwise the cell will lose `cardDetailsViewController` and becomes empty.
-            transitionContext.completeTransition(finished)
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             self.card.configure(withViewController: cardDetailsViewController)
         }
     }
