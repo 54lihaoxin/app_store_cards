@@ -10,7 +10,7 @@ import UIKit
 
 class CardsViewController: UIViewController {
     
-    fileprivate lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         cv.dataSource = self
         cv.delegate = self
@@ -19,7 +19,7 @@ class CardsViewController: UIViewController {
         return cv
     }()
     
-    fileprivate lazy var presentableViewControllers: [CardDetailsViewController] = {
+    private lazy var presentableViewControllers: [CardDetailsViewController] = {
         var viewControllers: [CardDetailsViewController] = []
         for i in 0..<20 {
             let vc = CardDetailsViewController()
@@ -29,7 +29,7 @@ class CardsViewController: UIViewController {
         return viewControllers
     }()
     
-    fileprivate weak var selectedCard: CardCollectionViewCell?
+    private weak var selectedCard: CardCollectionViewCell?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

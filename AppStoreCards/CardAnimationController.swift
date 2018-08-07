@@ -20,13 +20,13 @@ class CardAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
         case dismiss
     }
     
-    fileprivate let duration: TimeInterval = 0.5
-    fileprivate let damping: CGFloat = 1
-    fileprivate let initialSpringVelocity: CGFloat = 5
+    private let duration: TimeInterval = 0.5
+    private let damping: CGFloat = 1
+    private let initialSpringVelocity: CGFloat = 5
     
-    fileprivate let mode: Mode
-    fileprivate let card: CardCollectionViewCell
-    fileprivate let originalFrame: CGRect // TODO: This will be need to be obtained from delegate to handle view resizing and rotation.
+    private let mode: Mode
+    private let card: CardCollectionViewCell
+    private let originalFrame: CGRect // TODO: This will be need to be obtained from delegate to handle view resizing and rotation.
     private unowned let delegate: CardAnimationControllerDelegate
     
     init(mode: Mode, card: CardCollectionViewCell, originalFrame: CGRect, longLifeDelegate: CardAnimationControllerDelegate) {
