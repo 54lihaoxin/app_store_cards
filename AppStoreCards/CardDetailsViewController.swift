@@ -32,6 +32,7 @@ class CardDetailsViewController: UIViewController {
     
     private var textView: UITextView = {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 300, height: 800))
+        textView.isEditable = false
         textView.isScrollEnabled = false
         textView.text = String(repeating: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", count: 20)
         return textView
